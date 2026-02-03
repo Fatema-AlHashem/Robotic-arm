@@ -1,4 +1,5 @@
 
+
 import cv2
 
 # creating connection to cam
@@ -9,6 +10,7 @@ if not stream.isOpened():
     print('not opened!')
     exit()
 
+#since the main loop will live in the main.py probabably this function should return ine frame only ( so remove the while loop )
 
 while(True):
     ret,frame=stream.read() #reads each frame , returns the frame and boolean
@@ -42,6 +44,7 @@ cv2.destroyAllWindows()
 
 
     
+
 
 
 
