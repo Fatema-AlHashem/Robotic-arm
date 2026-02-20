@@ -1,5 +1,4 @@
 
-
 import cv2
 
 # creating connection to cam
@@ -10,41 +9,38 @@ if not stream.isOpened():
     print('not opened!')
     exit()
 
-#since the main loop will live in the main.py probabably this function should return ine frame only ( so remove the while loop )
-
-while(True):
-    ret,frame=stream.read() #reads each frame , returns the frame and boolean
-    if not ret:
-        print("Stream is failing no more frames :( ")
-        break
 
 
-    #display frames as whole 
-    cv2.imshow("WebCam",frame) #1st par -> title , 2nd -> frame
+ret,frame=stream.read() #reads each frame then ret ->boolean (succes or fail) frame->one single frame 
+if not ret:
+    print("Stream is failing no more frames :( ")
+        
 
 
-    # To exit from webcam , we can use if we click somthing we can exit from stream 
-    # waitKey(time in ms) --> means wait so open CV can update and to listen to keyboard
-    if cv2.waitKey(1)== ord('q'): # Not sure abt roboArm tho ?
-        break   
+    
+
+#display frames as whole 
+# cv2.imshow("WebCam",frame) #1st par -> title , 2nd -> frame    
+
+
+    
 
 stream.release()
 cv2.destroyAllWindows()
 
-
-
-
-    
-
-
-
-
-
-
+#as a loop i saw video now not even  apic , just a small pop up then it disaapears 
 
 
     
 
+
+
+
+
+
+
+
+    
 
 
 
